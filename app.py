@@ -7,8 +7,8 @@ import streamlit_book as stb
 __login__obj = __login__(auth_token = "pk_test_9J565P8EY847JAKEKF7F9JX94HJN",
                     company_name = "TFS",
                     width = 200, height = 250,
-                    logout_button_name = 'Logout', hide_menu_bool = False,
-                    hide_footer_bool = False,
+                    logout_button_name = 'Logout', hide_menu_bool = True,
+                    hide_footer_bool = True,
                     lottie_url = 'https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json')
 add_logo("logo-250.png", height=200)
 LOGGED_IN= __login__obj.build_login_ui()
@@ -36,10 +36,10 @@ def show_book():
                 }
     )
 
-if LOGGED_IN != True:
+if LOGGED_IN is not True:
     st.stop()
 else:
     show_book()
-    st.write(username)
+    # st.write(username)
    # stb.render_file('clients.py')
    

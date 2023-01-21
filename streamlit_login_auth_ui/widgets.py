@@ -244,23 +244,39 @@ class __login__:
                 self.cookies['__streamlit_login_signup_ui_username__'] = '1c9a923f-fb21-4a91-b3f3-5f18e3f01182'
                 del_logout.empty()
                 st.experimental_rerun()
+      
         
-
     def nav_sidebar(self):
-        """
-        Creates the side navigaton bar
-        """
-        main_page_sidebar = st.sidebar.empty()
-        with main_page_sidebar:
-            selected_option = option_menu(
-                menu_title = 'Navigation',
-                menu_icon = 'list-columns-reverse',
-                icons = ['box-arrow-in-right', 'person-plus', 'x-circle','arrow-counterclockwise'],
-                options = ['Login', 'Create Account', 'Forgot Password?', 'Reset Password'],
-                styles = {
-                    "container": {"padding": "5px"},
-                    "nav-link": {"font-size": "14px", "text-align": "left", "margin":"0px"}} )
-        return main_page_sidebar, selected_option
+            """
+            Creates the side navigaton bar
+            """
+            main_page_sidebar = st.sidebar.empty()
+            with main_page_sidebar:
+                selected_option = option_menu(
+                    menu_title = 'Navigation',
+                    menu_icon = 'list-columns-reverse',
+                    icons = ['box-arrow-in-right', 'x-circle','arrow-counterclockwise'],
+                    options = ['Login', 'Forgot Password?', 'Reset Password'],
+                    styles = {
+                        "container": {"padding": "5px"},
+                        "nav-link": {"font-size": "14px", "text-align": "left", "margin":"0px"}} )
+            return main_page_sidebar, selected_option
+    
+    # def nav_sidebar(self):
+    #     """
+    #     Creates the side navigaton bar
+    #     """
+    #     main_page_sidebar = st.sidebar.empty()
+    #     with main_page_sidebar:
+    #         selected_option = option_menu(
+    #             menu_title = 'Navigation',
+    #             menu_icon = 'list-columns-reverse',
+    #             icons = ['box-arrow-in-right', 'person-plus', 'x-circle','arrow-counterclockwise'],
+    #             options = ['Login', 'Create Account', 'Forgot Password?', 'Reset Password'],
+    #             styles = {
+    #                 "container": {"padding": "5px"},
+    #                 "nav-link": {"font-size": "14px", "text-align": "left", "margin":"0px"}} )
+    #     return main_page_sidebar, selected_option
     
 
     def hide_menu(self) -> None:
